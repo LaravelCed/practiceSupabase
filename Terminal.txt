@@ -55,7 +55,7 @@ DB_HOST=aws-1-ap-south-1.pooler.supabase.com
 DB_PORT=6543
 DB_DATABASE=postgres
 DB_USERNAME=postgres.oagcdxblgsgkygnqanri
-DB_PASSWORD=@PracticeProj0000
+DB_PASSWORD=@PracticeProj0000 //Note the password it default of @databaseName0000
 DB_SSLMODE=require
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
