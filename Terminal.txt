@@ -1,0 +1,82 @@
+STEP 1: CREATE A LARAVEL PROJECT BY THIS COMMAND OPEN TEMINAL AND PASTE THIS COMMAND
+
+- composer create-project laravel/Laravel projectName
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 2: EDIT THE (.env) FOR THE DATA PURPOSE
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 3: TO ADD A MIGRATION OPEN THIS TERMINAL AND PASTE THIS COMMAND THE MIGRATION IS NEEDED TO BE CREATED FOR TABLE OF THE DATABASE YOU CREATED
+
+- php artisan make:migration create_table_name_table
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 4: TO RUN THE MIGRATION AND AUTOMATICALLY CREATED THE DATABASE TABLE RUN THIS COMMAND IN THE TERMINAL
+
+- php artisan migrate
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 5: TO ADD A MODELS OPEN TERMINAL AND TYPE THIS COMMAND THE MODEL PURPOSE IS TO USE THE DATABASE COLLUMNS
+
+- php artisan make:model TableName
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 6: TO ADD A CONTROLLER OPEN TERMINAL AND TYPE THIS COMMAND THE CONTROLLER PURPOSE IS TO HANDLE FUNCTIONALITIES AND PROCESSES
+
+- php artisan make:controller controllerNameController
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 7: TO ADD A SERVICES CREATE (Services) FOLDER INSIDE THE (app) FOLDER AND THEN CREATE A FILE INSIDE THE ('Services') FOLDER WHICH IS TYPE YOUR FILENAME LIKE THIS (servicesNameServices)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 8: COPY THIS CODE IN THE SERVICES FILE THAT YOU CREATE THE PURPOSE OF THE SERVICES IS TO EXTEND THE FUNCTIONALITIES HANDLE INSTEAD OF CONTROLLER ONLY
+
+<?php
+
+namespace App\Services;
+
+class servicesNameServices {
+    //
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 9: ALTER THE (.env) FOR THE INTEGRATION OF SUPABASE DATABASE TO GET THE HOST AND THE DB_USERNAME GO TO THE SUPABASE DATABASE AND THEN CLICK CONNECT ON TOP NAVBAR AND THEN SWITCH THE DIRECT CONNECTION TO TRANSACTION CONNECTION TO SEE THE CERTAIN DATA THAT YOU NEED IN THE SUPABASE INTEGRATION
+
+DB_CONNECTION=pgsql
+DB_HOST=aws-1-ap-south-1.pooler.supabase.com
+DB_PORT=6543
+DB_DATABASE=postgres
+DB_USERNAME=postgres.oagcdxblgsgkygnqanri
+DB_PASSWORD=@PracticeProj0000
+DB_SSLMODE=require
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 10: ALTER THE (config/database.php) AND FIND THE (pgsql) AND REPLACE IT TO THIS
+
+'pgsql' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT'),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'require',
+        ],
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEP 11: TO RUN THE APPLICATION OPEN TERMINAL AND THEN TYPE THIS COMMAND
+
+- php artisan serve
